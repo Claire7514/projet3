@@ -1,6 +1,6 @@
-num_sprite_side = 15
-sprite_size = 30
-side_window = num_sprite_side * sprite_size
+NUM_SPRITE_SIDE = 15
+SPRITE_SIZE = 30
+SIDE_WINDOW = NUM_SPRITE_SIDE * SPRITE_SIZE
 
 title_window = "Aidez MacGyver à s'échapper !"
 image_icone = "images/MacGyver.png"
@@ -11,3 +11,4 @@ image_wall = "images/wall.png"
 image_start = "images/start.png"
 image_needle = "images/aiguille.png"
 image_ether = "images/ether.png"
+image_tube = "tube_plastique.png"

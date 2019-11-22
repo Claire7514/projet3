@@ -1,39 +1,35 @@
 import pygame
-from pygame.locals import*
-from constants import*
+from pygame.locals import *
+
+from constants import *
 
 class Hero:
-    def __init__(self, right, left, down, up):
-        self.macgyver = pygame.image.load(macgyver).convert_alpha()
+    
+    def __init__(self):
+        """  self.macgyver = pygame.image.load(image_macgyver).convert_alpha()"""
         self.case_x = 0
         self.case_y = 0
         self.x = 0
         self.y = 0
-        self.direction = self.droite
-        self.level = level
+        self.num_objects = 0
 
-    def moove(self, direction):
+    def moove(self, direction, level):
         if direction == 'right':
-            if self.case_x < (num_sprite_side - 1):
-                if self.level.structure[self.case_y][self.case_x + 1] != 'm':
-                   self.case_x += 1
-                   self.x = self.case_x * sprite_size
-            self.moove = self.right
+            if not(self.case_x < (NUM_SPRITE_SIDE - 1)) & level.structure[self.case_y][self.case_x + 1] != 'm':
+                self.case_x += 1
+                self.x = self.case_x * SPRITE_SIZE
         if direction == 'left':
-            if self.case_x > 0:
-                if self.level.structure[self.case_y][self.case_x - 1] != 'm':
-                    self.case_x -= 1
-                    self.x = self.case_x * sprite_size
-            self.moove = self.left
+            if self.case_x > 0 & level.structure[self.case_y][self.case_x - 1] != 'm':
+                self.case_x -= 1
+                self.x = self.case_x * SPRITE_SIZE
         if direction == 'down':
-            if self.case_y < (num_sprite_side - 1):
-                if self.level.structure[self.case_y + 1][self.case_x] != 'm':
-                    self.case_y += 1
-                    self.y = self.case_y * sprite_size
-            self.moove = self.down
+            if self.case_y < (NUM_SPRITE_SIDE - 1) & level.structure[self.case_y + 1][self.case_x] != 'm':
+                self.case_y += 1
+                self.y = self.case_y * SPRITE_SIZE
         if direction == 'up':
-            if self.case_y > 0:
-                if self.level.structure[self.case_y - 1][self.case_x] != 'm':
+            if self.case_y > 0 & level.structure[self.case_y - 1][self.case_x] != 'm':
                     self.case_y -= 1
-                    self.y = self.case_y * sprite_size
-            self.moove = self.up
+                    self.y = self.case_y * SPRITE_SIZE
+
+    def grab(self):
+        self.num_objects += 1
