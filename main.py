@@ -10,19 +10,19 @@ from constants import *
 
 pygame.init()
 
-window = pygame.display.set_mode((side_window, side_window))
+WINDOW = pygame.display.set_mode((SIDE_WINDOW, SIDE_WINDOW))
 
-icone = pygame.image.load(image_macgyver).convert_alpha()
-pygame.display.set_icon(icone)
+ICONE = pygame.image.load(IMAGE_MACGYVER).convert_alpha()
+pygame.display.set_icon(ICONE)
 
-pygame.display.set_caption(title_window)
+pygame.display.set_caption(TITLE_WINDOW)
 
-background = pygame.image.load(image_background).convert()
-mac = pygame.image.load(image_macgyver).convert_alpha()
-wall = pygame.image.load(image_wall).convert()
-ether = pygame.image.load(image_ether).convert_alpha()
-needle = pygame.image.load(image_needle).convert_alpha()
-tube = pygame.image.load(image_tube).convert_alpha()
+BACKGROUND = pygame.image.load(IMAGE_BACKGROUND).convert()
+mac = pygame.image.load(IMAGE_MACGYVER).convert_alpha()
+wall = pygame.image.load(IMAGE_WALL).convert()
+ether = pygame.image.load(IMAGE_ETHER).convert_alpha()
+needle = pygame.image.load(IMAGE_NEEDLE).convert_alpha()
+tube = pygame.image.load(IMAGE_TUBE).convert_alpha()
 
 pygame.display.flip() #raffraichissement
 
@@ -48,8 +48,8 @@ while CONTINUE:
                     mac.moove('down')
       
         # affihcage nouvelles positions  
-        window.blit(background, (0,0))
-        level.display(window)
+        window.blit(BACKGROUND, (0,0))
+        level.display(WINDOW)
         window.blit(mac.image, (mac.x, mac.y))
 
         pygame.display.flip()

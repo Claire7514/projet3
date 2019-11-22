@@ -6,7 +6,7 @@ from constants import *
 class Hero:
     
     def __init__(self):
-        """  self.macgyver = pygame.image.load(image_macgyver).convert_alpha()"""
+        """  self.macgyver = pygame.image.load(IMAGE_MACGYVER).convert_alpha()"""
         self.case_x = 0
         self.case_y = 0
         self.x = 0

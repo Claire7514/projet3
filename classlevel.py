@@ -5,7 +5,7 @@ from constants import *
 
 class Level:
     def __init__(self):
-        self.file = "N1.txt"
+        self.file = FILE
         self.structure = 0
 
     def generate(self):
@@ -20,9 +20,9 @@ class Level:
             self.structure = level_structure
 
     def show(self, window):
-        wall = pygame.image.load(image_wall).convert()
-        start = pygame.image.load(image_start).convert()
-        arrival = pygame.image.load(image_keeper).convert_alpha()
+        wall = pygame.image.load(IMAGE_WALL).convert()
+        start = pygame.image.load(IMAGE_START).convert()
+        arrival = pygame.image.load(IMAGE_KEEPER).convert_alpha()
 
         num_line = 0
         for line in self.structure:
