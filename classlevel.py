@@ -4,20 +4,20 @@ from pygame.locals import *
 from constants import *
 
 class Level:
-    def __init__(self):
-        self.file = FILE
+    def __init__(self, f):
+        self.file = f
         self.structure = 0
 
     def generate(self):
         with open(self.file, "r") as file: #ouverture du fichier
-            level_structure = [] #
+            level_structure = []
             for line in file:
                 line_level = []
                 for sprite in line:
                     if sprite != '\n':
-                        line.level.append(sprite)
-                level_structure.append(line_level)
-            self.structure = level_structure
+                        line.level.append(sprite) # ajout du sprite à la liste de la ligne
+                level_structure.append(line_level) # ajout de la ligne à la liste du niveau
+            self.structure = level_structure # on sauvegarde cette structure 
 
     def show(self, window):
         wall = pygame.image.load(IMAGE_WALL).convert()
@@ -25,7 +25,7 @@ class Level:
         arrival = pygame.image.load(IMAGE_KEEPER).convert_alpha()
 
         num_line = 0
-        for line in self.structure:
+        for line in self.structure: # parcours des listes de lignes 
             num_case = 0
             for sprite in line:
                 x = num_case * SPRITE_SIZE # calcul position réelle en pixels (pas en cases) de chaque sprite

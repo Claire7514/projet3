@@ -1,3 +1,7 @@
+"""
+File who describes all my constants.
+"""
+
 NUM_SPRITE_SIDE = 15
 SPRITE_SIZE = 30
 SIDE_WINDOW = NUM_SPRITE_SIDE * SPRITE_SIZE
