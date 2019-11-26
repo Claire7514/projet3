@@ -5,7 +5,7 @@ The class of the tools.
 import random
 from constants import *
 
-class Objects:
+class Object:
     def __init__(self):
         self.case_x = 0
         self.case_y = 0
